@@ -9,6 +9,7 @@ const app = express();
 
 if (process.env.NODE_ENV !== "production") app.use(morgan("dev"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/v1/users", usersRoutes);
 app.use("/api/v1/tasks", taskRoutes);
